@@ -1,9 +1,9 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const port = process.env.PORT || 443,
+const port = process.env.PORT || 443,https:
     host = '0.0.0.0', // probably this change is not required
-    externalUrl = process.env.HOSTURL,
-    token = process.env.TOKEN || 'YOUR TELEGRAM TOKEN',
+    externalUrl = 'https://botcreator3.herokuapp.com',
+    token = process.env.TOKEN || '648944209:AAHX3fF-RTeZhJALEFjodIIifRnNG274mj8',
     bot = new TelegramBot(token, {
         webHook: {
             port: port,
@@ -11,3 +11,7 @@ const port = process.env.PORT || 443,
         }
     });
 bot.setWebHook(externalUrl + ':443/bot' + token);
+bot.on('message',(msg)=>{
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, "Received");
+
