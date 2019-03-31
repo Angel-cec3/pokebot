@@ -16,7 +16,7 @@ bot.on('message',(msg)=>{
     if (msg.text == 'hi'){
         bot.sendMessage(chatId, "Hello");
     }
-    elif (msg.text == 'How are you')
+    else if (msg.text == 'How are you')
     {
         bot.sendMessage(chatId, "Fine");
     }
